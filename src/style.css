@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.container {
+    display: flex;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #123;
+    border-radius: 20px;
+    width: 80%;
+    flex-grow: 1    ;
+}
+
+.record-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#record {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    position: relative;
+}
+
+#record:focus {
+    outline: none;
+}
+
+.recording::after {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 5px !important;
+    transition: all .2s;
+}
+
+.hide {
+    opacity: 0;
+}
+
+#record::after {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    content: '';
+}
+
+#display {
+    font-family: 'Courier New', Courier, monospace;
+} 
+
+#mic-icon {
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 35px;
+    transition: all .2s;
+}
+
+.preload *{
+    transition: none !important;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.group>input, .group>select{
+    flex-grow: 1;
+    margin-right: 16px;
+    margin-left: 8px;
+}

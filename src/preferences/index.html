@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Preferências</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="group">
+            <label for="dest-path">Destination folder:</label>
+            <input id="dest-path" name="dest-path" type="text" />
+            <button onclick="choose()">Choose Path</button>
+        </div>
+    </div>
+
+
+    <script>
+        const destPath = document.querySelector('#dest-path');
+
+        window.myAPI.destinationPath((destination) => {
+            destPath.value = destination;
+        });
+
+        function choose() {
+            window.myAPI.chooseDestination((destination) => {
+                destPath.value = destination;
+            })
+        }
+
+    </script>
+</body>
+
+</html>
